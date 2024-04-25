@@ -147,6 +147,9 @@ map("n", "<leader>si", vim.show_pos, { desc = "Inspect Pos" })
 
 -- floating terminal
 local lazyterm = function() LazyVim.terminal(nil, { cwd = LazyVim.root() }) end
+map("n", "<leader>t", ":sp | terminal<CR>")
+map("n", "<leader>vt", ":vsp | terminal<CR>")
+map("t", "<Esc>", "<C-\\><C-n>", opt)
 map("n", "<leader>ft", lazyterm, { desc = "Terminal (Root Dir)" })
 map("n", "<leader>fT", function() LazyVim.terminal() end, { desc = "Terminal (cwd)" })
 map("n", "<c-/>", lazyterm, { desc = "Terminal (Root Dir)" })
